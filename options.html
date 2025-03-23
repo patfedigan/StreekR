@@ -1,0 +1,54 @@
+<!DOCTYPE>
+<!--
+ * Copyright (c) 2014 Streekr
+-->
+<html>
+<head>
+  <title>Options for the Send as Email extension</title>
+<style>
+#providerSelection {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 10pt;
+}
+</style>
+<script src="options.js"></script>
+</head>
+<body>
+<table class="simple">
+<tr>
+  <td rowspan="2" valign="top" align="center" width="80">
+    <img src="Streekr_128x128.png" width="64" height="64" />
+  </td>
+  <td height="22"></td>
+</tr>
+<tr>
+  <td valign="center">
+    <div id="providerSelection">
+    <strong>Select provider to use when emailing a web page address:</strong>
+    <br /><br />
+    <label>
+      <input id="default" type="radio" name="mailto" value="mailto" checked>
+      Your default mail handler<br>
+    </label>
+
+    <label>
+      <input id="gmail" type="radio" name="mailto" value="gmail">Gmail<br>
+    </label>
+	<br>
+	<!--  Tried adding a button to close window but not supported
+	<label>
+		<button type="button" value="Close Window" onclick="close_window();">Close Window</button>
+	</label>
+	-->
+	<h2>Wan't to view and keep your Streek's saved? Visit the following links!</h2>
+   <br/>
+   <h3><a href='http://streekr.com/private/signup.php'>Signup</a></h3>
+   <h3><a href='http://streekr.com/private/login.php'>Login</a></h3>
+   <br/>
+    </div>
+  </td>
+</tr>
+</table>
+   
+</body>
+</html>

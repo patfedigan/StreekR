@@ -1,0 +1,18 @@
+::selection
+{
+background:#ff8B00;
+}
+::-moz-selection
+{
+background:#ff8B00;
+}
+.selection_bubble {
+  visibility: hidden;
+  position: fixed;
+  border:1px solid #FFF;
+  margin:0px;
+  border-radius: 20px;
+  width: 134px;
+  height: 60px;
+  background: rgb(243,146,49) url('chrome-extension://__MSG_@@extension_id__/streekr1.png') no-repeat center center; 
+}
