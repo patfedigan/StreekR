@@ -1,5 +1,13 @@
-// Copyright (c) 2014 Streekr
+/**
+ * StreekR Chrome Extension Background Script
+ * Handles email functionality and browser action events
+ * @copyright 2014 Streekr
+ */
 
+/**
+ * Retrieves the custom mailto URL from localStorage
+ * @returns {string} The custom mailto URL or empty string if not set
+ */
 function customMailtoUrl() {
   if (window.localStorage == null)
     return "";
@@ -8,12 +16,20 @@ function customMailtoUrl() {
   return window.localStorage.customMailtoUrl;
 }
 
-chrome.tabs.onUpdated.addListener( function (tabId, changeInfo, tab) {
+// Listen for tab updates to handle page load completion
+chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
   if (changeInfo.status == 'complete') {
     console.log("Hello, background!")
   }
 })
 
+/**
+ * Executes the mailto action with the provided parameters
+ * @param {number} tab_id - The ID of the current tab
+ * @param {string} subject - Email subject
+ * @param {string} body - Email body content
+ * @param {string} selection - Selected text from the page
+ */
 function executeMailto(tab_id, subject, body, selection) {
   var default_handler = customMailtoUrl().length == 0;
   //alert(subject); //for testing
@@ -45,8 +61,10 @@ function executeMailto(tab_id, subject, body, selection) {
   }
 }
 
-//To open options page on installation
-
+/**
+ * Handles the extension installation process
+ * Opens the options page on first installation
+ */
 function install_notice() {
     if (localStorage.getItem('install_time'))
         return;
@@ -66,6 +84,7 @@ install_notice();
     }
 });*/
 
+// Listen for messages from content scripts
 chrome.runtime.onConnect.addListener(function(port) {
   var tab = port.sender.tab;
 
@@ -79,7 +98,10 @@ chrome.runtime.onConnect.addListener(function(port) {
   });
 });
 
-// Called when the user clicks on the browser action icon.
+/**
+ * Handles browser action click events
+ * Injects content script for HTTP/HTTPS pages or executes mailto directly
+ */
 chrome.browserAction.onClicked.addListener(function(tab) {
 	//Little cool code to check if the scpript ran
 	//chrome.tabs.executeScript({
