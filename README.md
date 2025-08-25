@@ -1,4 +1,7 @@
-# StreekR
+**Outcome**: Discontinued after early testing due to limited market traction 
+# StreekR Startup
+
+StreekR was an early-stage startup project I co-founded and actively developed
 
 StreekR is a powerful Chrome extension designed to help you highlight content online, easily share snippets, and manage your "streeks" — curated content collections that can be accessed at [StreekR.com](https://www.streekr.com).
 
